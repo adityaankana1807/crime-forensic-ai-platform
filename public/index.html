@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Crime Behaviour and Digital-Forensic Evidence Analysis</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div>
+        <p class="kicker">AI-driven multilingual crime research platform</p>
+        <h1>Crime Behaviour and Digital-Forensic Evidence Analysis</h1>
+      </div>
+      <nav>
+        <a href="#datasets">Datasets</a>
+        <a href="#triage">NLP triage</a>
+        <a href="#gaps">Research gaps</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-copy">
+          <h2>Evidence-aware analysis for Indian and global crime research</h2>
+          <p>
+            Explore curated public datasets, compare India-specific cybercrime signals with global indicators,
+            and run explainable NLP triage over complaint or evidence summaries.
+          </p>
+        </div>
+        <div class="stats" id="stats"></div>
+      </section>
+
+      <section id="datasets" class="band">
+        <div class="section-head">
+          <h2>Saved Datasets</h2>
+          <p>Every dataset is stored with provenance, granularity, and methodological limits.</p>
+        </div>
+        <div id="datasetGrid" class="grid"></div>
+      </section>
+
+      <section class="band split">
+        <div>
+          <div class="section-head">
+            <h2>India Cybercrime Growth</h2>
+            <p>Top State/UT percentage changes from 2021 to 2023 in the PIB table citing NCRB Crime in India.</p>
+          </div>
+          <div id="growthChart" class="chart"></div>
+        </div>
+        <div id="sourcePanel" class="panel"></div>
+      </section>
+
+      <section id="triage" class="band split">
+        <div>
+          <div class="section-head">
+            <h2>NLP Triage</h2>
+            <p>Paste a complaint, FIR summary, cyber tip, or digital-forensic note. Mixed English, Hindi, and Hinglish signals are supported.</p>
+          </div>
+          <textarea id="caseText" spellcheck="true">Victim reports OTP fraud through a fake KYC call. Money was sent by UPI to test@upi after the caller used +919876543210 and a phishing URL https://bank-example.test/login. Screenshot, transaction UTR, and phone records are available but hash and seizure memo are missing.</textarea>
+          <button id="analyzeBtn" type="button">Analyze Evidence</button>
+        </div>
+        <div id="analysisResult" class="result"></div>
+      </section>
+
+      <section id="gaps" class="band">
+        <div class="section-head">
+          <h2>Paper Gaps</h2>
+          <p>Use these as problem framing and limitations in the paper.</p>
+        </div>
+        <div id="gapList" class="gap-list"></div>
+      </section>
+    </main>
+
+    <footer>
+      <p>Research prototype. No personally identifiable operational police data is included.</p>
+    </footer>
+
+    <script src="/app.js"></script>
+  </body>
+</html>
