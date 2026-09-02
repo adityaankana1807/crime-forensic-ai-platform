@@ -1,0 +1,60 @@
+{
+  "generated_at": "2026-09-02T08:59:15.489850+00:00",
+  "datasets": [
+    {
+      "id": "india_cybercrime_ncrb_pib_2021_2023",
+      "title": "India NCRB cybercrime cases by State/UT, 2021-2023",
+      "file": "data/processed/india_cybercrime_ncrb_pib_2021_2023.csv",
+      "public_file": "data/india_cybercrime_ncrb_pib_2021_2023.csv",
+      "source_url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2241339&lang=1&reg=3",
+      "granularity": "State/UT",
+      "limitations": "Public aggregate table from PIB release citing NCRB Crime in India. It cannot identify incidents, suspects, victims, or forensic artifacts.",
+      "rows": 36
+    },
+    {
+      "id": "india_cyber_forensic_capacity_pib_2022_2025",
+      "title": "India cyber-forensic capacity funding by State/UT",
+      "file": "data/processed/india_cyber_forensic_capacity_pib_2022_2025.csv",
+      "public_file": "data/india_cyber_forensic_capacity_pib_2022_2025.csv",
+      "source_url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2241339&lang=1&reg=3",
+      "granularity": "State/UT",
+      "limitations": "Funding/capacity proxy only. It does not measure lab throughput, backlog, tool quality, or conviction impact.",
+      "rows": 20
+    },
+    {
+      "id": "global_homicide_wb_unodc_selected_countries",
+      "title": "Global intentional homicide rates for selected countries",
+      "file": "data/processed/global_homicide_wb_unodc_selected_countries.csv",
+      "public_file": "data/global_homicide_wb_unodc_selected_countries.csv",
+      "source_url": "https://api.worldbank.org/v2/country/IND;USA;GBR;BRA;ZAF;JPN/indicator/VC.IHR.PSRC.P5?format=json&per_page=20000",
+      "granularity": "Country-year",
+      "limitations": "Cross-country aggregate rates support macro comparison only. They do not encode modus operandi, language, evidence, or offender linkage.",
+      "rows": 191
+    },
+    {
+      "id": "uk_police_london_street_crime_sample",
+      "title": "UK Police street-level crime sample, central London",
+      "file": "data/processed/uk_police_london_street_crime_sample.csv",
+      "public_file": "data/uk_police_london_street_crime_sample.csv",
+      "source_url": "https://data.police.uk/api/crimes-street/all-crime?lat=51.5074&lng=-0.1278",
+      "granularity": "Street-month sample",
+      "limitations": "Useful for schema comparison and geospatial UI testing. Do not treat a small coordinate sample as a city-wide crime baseline.",
+      "rows": 250
+    },
+    {
+      "id": "us_bjs_nibrs_violent_incidents_sample",
+      "title": "US BJS/FBI NIBRS violent incidents national estimates sample",
+      "file": "data/processed/us_bjs_nibrs_violent_incidents_sample.csv",
+      "public_file": "data/us_bjs_nibrs_violent_incidents_sample.csv",
+      "source_url": "https://api.ojp.gov/bjsdataset/v1/r32q-bdaw.csv?%24limit=250",
+      "granularity": "National incident-estimate table sample",
+      "limitations": "NIBRS estimates are nationally representative public estimates, not raw case files. They are useful for schema and evaluation-design comparison.",
+      "rows": 250
+    }
+  ],
+  "notes": [
+    "No personally identifiable operational police data is included.",
+    "Datasets are saved for research prototyping and paper-method discussion, not operational deployment.",
+    "Fetched API datasets may change over time; rerun scripts/build_datasets.py before final paper submission."
+  ]
+}
