@@ -92,7 +92,7 @@ function renderDatasets(datasets) {
          <span class="pill">${dataset.granularity}</span>
          <span class="pill">${number(dataset.rows)} rows</span>
        </div>
-       <p><a href="/${dataset.public_file || dataset.file}" target="_blank" rel="noreferrer">Open CSV</a></p>`
+       <p><a href="${dataset.public_file || dataset.file}" target="_blank" rel="noreferrer">Open CSV</a></p>`
     );
     datasetGrid.appendChild(card);
   });
@@ -152,7 +152,7 @@ async function analyze() {
   result.innerHTML = "<p>Analyzing...</p>";
   let data;
   try {
-    data = await getJSON("/api/analyze", {
+    data = await getJSON("api/analyze", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ text: caseText.value }),
@@ -166,9 +166,9 @@ async function analyze() {
 async function init() {
   let dashboard;
   try {
-    dashboard = await getJSON("/api/dashboard");
+    dashboard = await getJSON("api/dashboard");
   } catch (error) {
-    dashboard = await getJSON("/data/dashboard.json");
+    dashboard = await getJSON("data/dashboard.json");
   }
   renderStats(dashboard);
   renderDatasets(dashboard.datasets);
